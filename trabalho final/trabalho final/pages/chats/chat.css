@@ -1,0 +1,263 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+header h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(to right, #0caff5, #5106d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navegacao {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  margin: 0;
+  font-weight: 550;
+}
+
+.navegacao a {
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.navegacao a:hover,
+.navegacao a.ativo {
+  color: #5106d3;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.cabecalho {
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabecalho h3 {
+  color: #667eea;
+  font-size: 1.5rem;
+}
+
+.navegacao {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navegacao a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navegacao a:hover,
+.navegacao a.ativo {
+  color: #667eea;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+}
+
+#chatContainer {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#mensagens {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #f8f9fa;
+}
+
+#mensagens::-webkit-scrollbar {
+  width: 8px;
+}
+
+#mensagens::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.mensagem {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  align-self: flex-start;
+  animation: slideIn 0.3s ease;
+}
+
+.mensagem.minha {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.mensagem .autor {
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  opacity: 0.8;
+}
+
+.mensagem.minha .autor {
+  color: rgba(255,255,255,0.9);
+}
+
+.mensagem .texto {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.mensagem .hora {
+  font-size: 0.7rem;
+  margin-top: 0.3rem;
+  opacity: 0.6;
+  text-align: right;
+}
+
+.notificacao {
+  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+  font-style: italic;
+  padding: 0.5rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  margin: 0.5rem auto;
+}
+
+.digitando {
+  color: #667eea;
+  font-size: 0.85rem;
+  font-style: italic;
+  padding: 0.5rem;
+  animation: pulse 1.5s infinite;
+}
+
+#chatForm {
+  display: flex;
+  padding: 1rem;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+}
+
+#mensagemInput {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#mensagemInput:focus {
+  border-color: #667eea;
+}
+
+#chatForm button {
+  margin-left: 0.5rem;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#chatForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+#chatForm button:active {
+  transform: translateY(0);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .navegacao {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  #chatContainer {
+    height: calc(100vh - 100px);
+  }
+  
+  .mensagem {
+    max-width: 85%;
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trocaí - Início</title>
+  <link rel="stylesheet" href="principal.css" />
+</head>
+<body>
+  <header class="cabecalho">
+    <h3>Trocaí</h3>
+    <nav class="navegacao">
+      <li><a href="principal.html">Pedidos</a></li>
+      <li><a href="principal2.html" class="ativo">Favores</a></li>
+
+      <li><a href="../chats/chat.html">Chat</a></li>
+      <li><a href="../postar/postar].html">Postar</a></li>
+      <li><a href="../perfil/perfil.html">Perfil</a></li>
+    </nav>
+  </header>
+
+  <main>
+    <section class="feed">
+      <h2>Favores oferecidos pela comunidade:</h2>
+
+      <div class="grid-posts">
+        <!-- Cada card representa uma postagem -->
+        <div class="post-card">
+          <h3>Troco ajuda com site por aula de violão 🎸</h3>
+          <p>Sou desenvolvedor e posso montar uma página simples em troca de algumas aulas de violão.</p>
+          <small>Publicado por <strong>@joao_dev</strong></small>
+          <button>Quero trocar</button>
+        </div>
+
+        <div class="post-card">
+          <h3>Posso cuidar de pets 🐶</h3>
+          <p>Posso passear e cuidar de cães no fim de semana. Em troca, aceito ajuda com jardinagem.</p>
+          <small>Publicado por <strong>@gi_garden</strong></small>
+          <button>Quero trocar</button>
+        </div>
+
+        <div class="post-card">
+          <h3>Aulas de inglês por revisão de texto 📚</h3>
+          <p>Dou aulas de conversação em inglês e procuro alguém que revise meus textos acadêmicos.</p>
+          <small>Publicado por <strong>@matheusedu</strong></small>
+          <button>Quero trocar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito por <strong>Davi</strong>, <strong>Diogo</strong>, <strong>Giovana</strong> e <strong>Matheus</strong></p>
+    <p class="copy">&copy; <span id="ano"></span> - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="principal.js"></script>
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

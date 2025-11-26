@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trocaí - Perfil</title>
+  <link rel="stylesheet" href="perfil.css">
+  <link rel="stylesheet" href="../pagePrincipal/principal.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <h3>Trocaí</h3>
+    <nav class="navegacao">
+      <li><a href="../pagePrincipal/principal.html">Pedidos</a></li>
+      <li><a href="../pagePrincipal/principal2.html">Favores</a></li>
+
+      <li><a href="../chats/chat.html">Chat</a></li>
+      <li><a href="../postar/postar].html">Postar</a></li>
+      <li><a href="../perfil/perfil.html" class="ativo">Perfil</a></li>
+    </nav>
+  </header>
+
+  <main>
+    <section class="perfil-header">
+      <div class="perfil-info">
+        <h2 id="perfilNome" class="perfil-nome">Davi Soares</h2>
+        <p id="perfilUsername" class="perfil-username">@davi</p>
+        <p id="perfilBio" class="perfil-bio">“Gosto de ajudar e trocar experiências com a comunidade 💬”</p>
+
+        <!-- Formulário oculto para editar perfil -->
+        <form id="perfilForm" style="display:none; margin-top:12px;">
+          <input type="text" id="inputNome" placeholder="Nome" style="width:100%; padding:8px; margin-bottom:8px;" />
+          <input type="text" id="inputUsername" placeholder="@username" style="width:100%; padding:8px; margin-bottom:8px;" />
+          <textarea id="inputBio" placeholder="Sua bio" style="width:100%; padding:8px; margin-bottom:8px;" rows="3"></textarea>
+          <div style="display:flex; gap:8px;">
+            <button type="submit" id="btnSalvarPerfil" style="background:linear-gradient(to right,#0caff5,#5106d3); color:#fff; border:none; padding:8px 12px; border-radius:8px;">Salvar</button>
+            <button type="button" id="btnCancelarPerfil" style="background:#ccc; color:#000; border:none; padding:8px 12px; border-radius:8px;">Cancelar</button>
+          </div>
+        </form>
+      </div>
+      <div class="perfil-acoes">
+        <button id="btnEditar" class="btn-editar">Editar Perfil</button>
+        <button id="btnSair" class="btn-sair">Sair</button>
+        <!-- Botão para excluir permanentemente o perfil do usuário -->
+        <button id="btnExcluir" class="btn-excluir" style="background:#d32f2f; color:#fff; border:none; padding:8px 12px; border-radius:8px;">Excluir Perfil</button>
+      </div>
+    </section>
+
+    <section class="favores-section">
+      <h2>Meus favores</h2>
+      <div class="cards-container" id="meusFavores">
+        <!-- Cards dos favores do usuário serão carregados aqui -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito por <strong>Davi</strong>, <strong>Diogo</strong>, <strong>Giovana</strong> e <strong>Matheus</strong></p>
+    <p class="copy">&copy; <span id="ano"></span> - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="perfil.js"></script>
+  <script>
+    // Preencher o ano do copyright no footer
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Trocaí!</title>
+  <link rel="stylesheet" href="login.css">
+ 
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login - Trocaí!</h2>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required style="flex:1;">
+          <button type="button" id="toggleSenha" style="background:#ccc; border:none; padding:8px 12px; border-radius:8px; cursor:pointer;">👁️</button>
+        </div>
+      </div>
+      <button type="submit" class="btn-login">Entrar</button>
+    </form>
+    <div class="register-link">
+      <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+  </div>
+
+  <script>
+    // ---- Autenticação simples (client-side) ----
+    // Chaves usadas: USERS_KEY (lista de usuários), PROFILE_KEY (perfil), CURRENT_KEY (username logado)
+    const USERS_KEY = 'trocaí_users_v1';
+    const PROFILE_KEY = 'trocaí_perfil_v1';
+    const CURRENT_KEY = 'trocaí_currentUser';
+    const ADMIN_KEY = 'trocaí_isAdmin'; // flag para indicar se é admin
+
+    // Recupera lista de usuários cadastrados (do localStorage)
+    function getUsers(){
+      try{ return JSON.parse(localStorage.getItem(USERS_KEY)||'[]'); }catch(e){return[]}
+    }
+
+    const form = document.getElementById('login-form');
+
+    // Botão mostrar/ocultar senha
+    const toggleBtn = document.getElementById('toggleSenha');
+    const senhaInput = document.getElementById('senha');
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (senhaInput.type === 'password') {
+        senhaInput.type = 'text';
+        toggleBtn.textContent = '🙈'; // olho fechado
+      } else {
+        senhaInput.type = 'password';
+        toggleBtn.textContent = '👁️'; // olho aberto
+      }
+    });
+
+    // Ao submeter o formulário: valida email+senha e cria o contexto de usuário logado
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // previne o reload da página
+      const email = document.getElementById('email').value.trim();
+      const senha = document.getElementById('senha').value;
+
+      const users = getUsers();
+      const user = users.find(u => u.email === email && u.senha === senha);
+      if (!user) return alert('E-mail ou senha inválidos');
+
+      // Salva o username atual e o perfil para uso nas outras páginas
+      localStorage.setItem(CURRENT_KEY, user.username);
+      localStorage.setItem(PROFILE_KEY, JSON.stringify({ nome: user.nome, username: user.username, bio: '' }));
+
+      // Se é admin, salva a flag
+      if (user.isAdmin) {
+        localStorage.setItem(ADMIN_KEY, 'true');
+      }
+
+      alert('Login realizado com sucesso! Redirecionando...');
+      window.location.href = '../pagePrincipal/principal.html';
+    });
+  </script>
+</body>
+</html>

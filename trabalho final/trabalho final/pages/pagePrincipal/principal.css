@@ -1,0 +1,143 @@
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  margin: 0;
+  background: linear-gradient(#f2f4f5 80%, rgb(248, 239, 248));
+  color: #333;
+  min-height: 80vh;
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+  .imagemLogo {
+    width: 150px;
+    margin: 0;
+    float: left;
+    margin-right: 30px;
+    margin-left: 10px;
+    margin-top: -20px;
+}
+
+.ft1 {
+    width: 100%;
+}
+
+
+.navegacao {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  margin: 0;
+  font-weight: 550;
+}
+
+.navegacao a {
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.navegacao a:hover,
+.navegacao a.ativo {
+  color: #5106d3;
+}
+
+/* ====== CONTEÚDO ====== */
+main {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  padding-bottom: 80px;
+  /* espaço para footer fixo */
+}
+
+.feed h2 {
+  color: rgb(12, 36, 250);
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom:50px;
+}
+
+/* ====== GRID DE POSTS ====== */
+.grid-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.post-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.post-card h3 {
+  margin-top: 0;
+  color: #1976d2;
+}
+
+.post-card p {
+  margin: 10px 0;
+  flex: 1;
+  color: #555;
+}
+
+.post-card small {
+  color: #777;
+}
+
+.post-card button {
+  margin-top: 15px;
+  background: linear-gradient(to right, #0caff5, #5106d3);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.post-card button:hover {
+  transform: scale(1.05);
+}
+
+.rodape{
+  box-shadow: 0 -7px 10px rgba(0, 0, 0, 0.05);
+}
+footer {
+  color: #0408ed93;
+  text-align: center;
+  padding: 8px 10px;
+
+  font-size: 13px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+}

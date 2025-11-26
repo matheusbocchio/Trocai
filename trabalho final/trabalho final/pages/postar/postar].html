@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trocaí - Postar Favor</title>
+  <link rel="stylesheet" href="postar.css">
+  <link rel="stylesheet" href="../pagePrincipal/principal.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <h3>Trocaí</h3>
+    <nav class="navegacao">
+      <li><a href="../pagePrincipal/principal.html">Pedidos</a></li>
+      <li><a href="../pagePrincipal/principal2.html">Favores</a></li>
+
+      <li><a href="#">Chat</a></li>
+      <li><a href="postar.html" class="ativo">Postar</a></li>
+      <li><a href="../perfil/perfil.html">Perfil</a></li>
+    </nav>
+  </header>
+
+  <main>
+    <section class="post-favor">
+      <h2>Postar um favor</h2>
+      <form id="favorForm">
+        <input type="hidden" id="favorId">
+        <input type="text" id="titulo" placeholder="Qual o seu pedido/favor?" required>
+        <textarea id="descricao" placeholder="Descrição do seu pedido/favor?" required></textarea>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button type="submit" class="btn-postar" id="submitBtn">Postar em Pedidos</button>
+          <button type="submit" class="btn-postar" id="submitBtn">Postar em Favores</button>
+
+          <button type="button" id="cancelEdit" style="display:none; background:#ccc; color:#000; padding:10px;border-radius:8px;border:none; cursor:pointer;">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="lista-favores">
+      <h2>Seus favores</h2>
+      <div class="cards-container grid-posts" id="user-cards-container">
+        <!-- Cards adicionados via JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito por <strong>Davi</strong>, <strong>Diogo</strong>, <strong>Giovana</strong> e <strong>Matheus</strong></p>
+    <p class="copy">&copy; <span id="ano"></span> - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="postar.js"></script>
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
